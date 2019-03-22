@@ -39,7 +39,7 @@ class Listing {
     addUser(id,username){
         console.log("addUser called");
 
-        for (var i =0; i < this.data.length; i++){
+        for (var i = 0; i < this.data.length; i++){
             if (this.data[i].id === id){
                 this.data[i].users.push(username);
                 this.users.push(username);
@@ -99,6 +99,7 @@ class Listing {
                                 this.deleteUser(username);
                                 return;
                             }
+                            
                         }
                     }
                 }

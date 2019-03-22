@@ -69,7 +69,6 @@ bot.on("message",msg => {
 
     if (!command.startsWith(prefix)) return;
 
-    if (bot.commands.get(command.slice(prefix.length))){
         if (validation(allowedRoles.roles,msg.member.roles.array()) || msg.member.id === owner){
                 let cmd = bot.commands.get(command.slice(prefix.length));
                 if (cmd){
@@ -78,9 +77,6 @@ bot.on("message",msg => {
         } else {
                 msg.channel.send("Sinulla ei ole oikeuksia tuohon komentoon.");
             }
-    }
-
-
 });
 
 bot.on('error', err => {

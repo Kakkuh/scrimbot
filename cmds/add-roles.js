@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
         let roles_raw = fs.readFileSync('./roles.json');
         let roles_array = JSON.parse(roles_raw);
 
-        let role = args[0]
+        let role = args[0];
         let found = false;
 
         for (var i = 0; i < roles_array.roles.length; i++){

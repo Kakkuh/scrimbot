@@ -8,6 +8,23 @@ module.exports.run = async (bot, message, args) => {
     const filter = m => !m.author.bot;
     let game = new Listing();
 
+    
+
+    let raw = fs.readFileSync('./roles.json');
+let allowedRoles = JSON.parse(raw);
+
+let validation = function(serverRoles, userRoles){
+    let val = false;
+    serverRoles.forEach((role) => {
+        userRoles.forEach((usr) => {
+            if (role == usr){
+                val = true;
+            }
+        });
+    });
+    return val;
+}
+
     let editLast3 = null;
 
     let startMessage = new Discord.RichEmbed()
@@ -60,7 +77,6 @@ module.exports.run = async (bot, message, args) => {
     const collector = snipeChannel.createMessageCollector(filter, {max: 200, maxMatches : 200, time: 180000});
 
     collector.on('collect', m => {
-
         console.log(`Collected ${m.content} | ${m.author.username}`);
 
         if (validation(allowedRoles.roles,m.member.roles.array())){
