@@ -1,4 +1,5 @@
 // require packages
+const Commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const settings = require('./settings.json');
 const fs = require('fs');
