@@ -7,8 +7,8 @@ module.exports.run = async (bot, message, args) => {
 
     console.log("Starting voice command");
 
-    if (voiceChannelID != null){
-        if(message.guild.channels.get(voiceChannelID)){
+    if (voiceChannelID != null) {
+        if (message.guild.channels.get(voiceChannelID)){
             let vc = message.guild.channels.get(voiceChannelID);
             console.log("Next stop, connection");
 
@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
                 const dispatcher = connection.playStream(stream, streamOptions);
 
                 dispatcher.on("end", end => {
-                    console.log("[VOICE CHANNEL] left countdown channel.")
+                    console.log("[VOICE CHANNEL] left countdown channel.");
                     vc.leave();
                 });
             }).catch(err => {
