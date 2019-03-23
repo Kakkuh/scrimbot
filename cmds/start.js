@@ -53,7 +53,7 @@ let validation = function(serverRoles, userRoles){
         if (time === 1){
             time -=1;
             timeEmbed.setDescription(time + " minuuttia");
-            clearInvertal(timeInterval);
+            clearInterval(timeInterval);
         }else {
             time -= 1;
             timeEmbed.setDescription(time + " minuuttia");
