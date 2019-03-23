@@ -30,7 +30,7 @@ let validation = function(serverRoles, userRoles){
     let startMessage = new Discord.RichEmbed()
         .setTitle("Fortnite Scrimit")
         .setDescription("Lähetä pelisi kolme viimeistä merkkiä tänne")
-        .setColor("#7289DA")
+        .setColor("#f5373a")
         .setFooter("friedclam");
 
     message.channel.send({embed: startMessage});
@@ -41,7 +41,7 @@ let validation = function(serverRoles, userRoles){
     let timeEmbed = new Discord.RichEmbed()
         .setTitle("Seuraavan scrimin alkuun...")
         .setDescription(time + " minuuttia")
-        .setColor("#7289DA");
+        .setColor("#f5373a");
 
     setTimeout(async () => {
         editTime = await message.channel.send ({embed: timeEmbed}).catch( (err) => {
@@ -64,11 +64,11 @@ let validation = function(serverRoles, userRoles){
             clearInterval(timeInterval);
         });
 
-    },60000)
+    },60000);
 
     let last3 = new Discord.RichEmbed()
     .setTitle("Viimeiset 3 merkkiä")
-    .setColor ("#7289DA");
+    .setColor ("#f5373a");
 
     setTimeout(async () => {
         editLast3 = await message.channel.send({embed: last3});
@@ -86,7 +86,6 @@ let validation = function(serverRoles, userRoles){
                 return;
             }
         }
-
         if (game.data.length === 0 && m.content.length === 3){
             game.addID(m.content.toUpperCase(), m.author.username);
         }else if (m.content.length === 3){
@@ -111,7 +110,7 @@ let validation = function(serverRoles, userRoles){
         let str = "";
         last3 = new Discord.RichEmbed()
             .setTitle("Viimeiset 3 merkkiä")
-            .setColor("#7289DA")
+            .setColor("#f5373a");
 
         for(var i = 0; i < game.data.length; i++){
             str = "";

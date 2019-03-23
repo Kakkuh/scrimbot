@@ -24,7 +24,7 @@ class Listing {
     }
 
     idPresent(id){
-        console.log("userPresent called");
+        console.log("idPresent called");
 
         if (this.data.length > 0){
             for (var i = 0; i < this.data.length; i++){
@@ -95,7 +95,7 @@ class Listing {
                                 this.data[0] = tmp2;
 
                                 let deleteID = this.data.shift();
-                                console.log(`deleted id : ${deletedID}`);
+                                console.log(`deleted id`);
                                 this.deleteUser(username);
                                 return;
                             }
@@ -110,7 +110,7 @@ class Listing {
     sort() {
         if (this.data.length >= 2){
             for (var i = 0; i < this.data.length - 1; i++){
-                for (var j = i + 1; j < this.addID.data.length; j++){
+                for (var j = i + 1; j < this.data.length; j++){
                     if (this.data[i].users.length < this.data[j].users.length){
                         let tmp = this.data[i];
                         this.data[i] = this.data[j];
